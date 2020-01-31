@@ -7,5 +7,9 @@ class dotfiles (
   String $repo_dir_name,
   String $repo_url,
 ){
-  include dotfiles::install_repo
+  contain dotfiles::install_git
+  contain dotfiles::clone_pull
+
+  Class['::dotfiles::install_git']
+  -> Class['::dotfiles::clone_pull']
 }

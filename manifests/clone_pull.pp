@@ -1,12 +1,8 @@
 # @summary Clone and Pull dotfiles from public GH page
 #
 # @example
-#   include dotfiles::install
-class dotfiles::install_repo {
-  package { "git":
-    ensure => present,
-  }
-
+#   include dotfiles::clone_pull
+class dotfiles::clone_pull {
   exec { "pull dotfiles":
     command => "/bin/bash sudo git pull",
     cwd    => "${dotfiles::repo_clone_path}${dotfiles::repo_dir_name}",
