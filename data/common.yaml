@@ -1,1 +1,3 @@
 ---
+dotfiles::repoPath: '/etc/dotfiles'
+dotfiles::repoURL: 'https://github.com/troywiegand/dotfiles.git'
