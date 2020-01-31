@@ -1,3 +1,4 @@
 ---
-dotfiles::repoPath: '/etc/dotfiles'
-dotfiles::repoURL: 'https://github.com/troywiegand/dotfiles.git'
+dotfiles::repo_clone_path: '/etc/'
+dotfiles::repo_dir_name: 'dotfiles'
+dotfiles::repo_url: 'https://github.com/troywiegand/dotfiles.git'
