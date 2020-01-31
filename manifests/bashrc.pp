@@ -6,7 +6,7 @@
 #   include dotfiles::bashrc
 class dotfiles::bashrc {
   exec { 'move bashrc':
-    onlyif  => "/bin/bash test -f ${dotfiles::repo_clone_path}${dotfiles::repo_dir_name}/.bashrc",
+    onlyif  => "/bin/echo 'test -f ${dotfiles::repo_clone_path}${dotfiles::repo_dir_name}/.bashrc' | /bin/bash ",
     command => "/bin/echo 'sudo mv ${dotfiles::repo_clone_path}${dotfiles::repo_dir_name}/.bashrc /etc/bashrc' | /bin/bash ",
     notify  => Exec['gain bothrc'],  
   }  
@@ -14,7 +14,7 @@ class dotfiles::bashrc {
   exec { 'gain bothrc':
     require => Exec['move bashrc'],
     command => "/bin/echo 'sudo cat ${dotfiles::repo_clone_path}${dotfiles::repo_dir_name}/.bothrc >> /etc/bashrc' | /bin/bash ",
-    onlyif  => "/bin/bash test -f ${dotfiles::repo_clone_path}${dotfiles::repo_dir_name}/.bothrc",
+    onlyif  => "/bin/echo 'test -f ${dotfiles::repo_clone_path}${dotfiles::repo_dir_name}/.bothrc' | /bin/bash",
   }
 
 }
