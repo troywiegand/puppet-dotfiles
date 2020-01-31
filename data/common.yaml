@@ -1,4 +1,4 @@
 ---
 dotfiles::repo_clone_path: '/opt/'
 dotfiles::repo_dir_name: 'dotfiles'
-dotfiles::repo_url: 'git://github.com/troywiegand/dotfiles.git'
+dotfiles::repo_url: 'http://github.com/troywiegand/dotfiles'
