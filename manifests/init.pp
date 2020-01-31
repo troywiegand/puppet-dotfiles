@@ -6,5 +6,5 @@ class dotfiles (
   String $repoURL,
   String $repoPath,
 ){
-  include dotfiles::installRepo
+  include dotfiles::install_repo
 }

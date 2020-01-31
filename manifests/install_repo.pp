@@ -2,7 +2,7 @@
 #
 # @example
 #   include dotfiles::install
-class dotfiles::installRepo {
+class dotfiles::install_repo {
   package { "git":
     ensure => present,
   }
