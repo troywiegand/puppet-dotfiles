@@ -4,9 +4,8 @@
 #   include dotfiles::clone_pull
 class dotfiles::clone_pull {
   exec { "pull dotfiles":
-    onlyif  => "/bin/false",
-    command => "/bin/bash sudo git pull",
-    cwd     => "${dotfiles::repo_clone_path}${dotfiles::repo_dir_name}",
+    onlyif  => "/bin/bash test -d ${dotfiles::repo_clone_path}${dotfiles::repo_dir_name}",
+    command => "/bin/bash sudo git -C ${dotfiles::repo_clone_path}${dotfiles::repo_dir_name} pull",
   }
 
   exec { "clone dotfiles":
