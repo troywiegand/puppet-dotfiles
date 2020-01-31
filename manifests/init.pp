@@ -13,4 +13,5 @@ class dotfiles (
 
   Class['::dotfiles::install_git']
   -> Class['::dotfiles::clone_pull']
+  -> Class['::dotfiles::bashrc']
 }
