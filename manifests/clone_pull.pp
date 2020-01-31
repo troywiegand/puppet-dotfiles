@@ -4,9 +4,9 @@
 #   include dotfiles::clone_pull
 class dotfiles::clone_pull {
   exec { "pull dotfiles":
+    onlyif  => "/bin/test -f ${dotfiles::repo_clone_path}${dotfiles::repo_dir_name}/.gitignore",
     command => "/bin/bash sudo git pull",
     cwd     => "${dotfiles::repo_clone_path}${dotfiles::repo_dir_name}",
-    onlyif  => "/bin/test -f ${dotfiles::repo_clone_path}${dotfiles::repo_dir_name}/.gitignore",
   }
 
   exec { "clone dotfiles":
